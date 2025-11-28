@@ -12,7 +12,7 @@ namespace SAN_API.Controllers
 {
     public class AuthentificationController : Controller
     {
-        private readonly DataContext dataContext;
+        private  DataContext dataContext;
         private JwtHelper jwtHelper;
         public AuthentificationController(DataContext dataContext, JwtHelper jwtHelper)
         {
@@ -73,7 +73,7 @@ namespace SAN_API.Controllers
             {
                 HttpOnly = true,
                 Secure = true,
-                SameSite = SameSiteMode.None,
+                SameSite = SameSiteMode.Strict,
                 Expires = DateTime.UtcNow.AddHours(heure)
             });
             return Ok(utilisateur);
@@ -172,5 +172,7 @@ namespace SAN_API.Controllers
             Response.Cookies.Delete("jwtToken");
             return Ok(new { message = "Déconnexion réussie" });
         }
+
+        [
     }
 }
