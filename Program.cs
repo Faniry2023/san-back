@@ -15,7 +15,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins("https://localhost:4200")
         .AllowCredentials()
         .AllowAnyMethod()
         .AllowAnyHeader();
@@ -40,6 +40,7 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
         ValidIssuer = "My_issuer-_number--4258ff",
+                       
         ValidAudience = "My-audience-_numberPrimarycode__4560ML5P7",
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };

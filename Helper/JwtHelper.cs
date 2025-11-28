@@ -15,6 +15,7 @@ namespace SAN_API.Helper
         {
             _secretKey = configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt key is not set");
             _issuer = "My_issuer-_number--4258ff";
+                        
             _audience = "My-audience-_numberPrimarycode__4560ML5P7";
         }
         public string GenerateToken(Guid id, string? email)
