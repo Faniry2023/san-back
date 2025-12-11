@@ -173,3 +173,4 @@ D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\SAN-API.pdb
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\SAN-API.genruntimeconfig.cache
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\ref\SAN-API.dll
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\SAN-API.staticwebassets.runtime.json
+D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Newtonsoft.Json.dll

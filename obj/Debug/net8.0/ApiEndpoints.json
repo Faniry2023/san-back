@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "SAN_API.Controllers.AuthentificationController",
+    "Method": "InsertGadm",
+    "RelativePath": "insert/gadm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SAN_API.Models.GadmModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.AuthentificationController",
     "Method": "Login",
     "RelativePath": "login",
     "HttpMethod": "POST",
@@ -47,12 +63,34 @@
   },
   {
     "ContainingType": "SAN_API.Controllers.TesteController",
-    "Method": "Index",
-    "RelativePath": "recDonne",
+    "Method": "Question",
+    "RelativePath": "mesQuestion/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.TesteController",
+    "Method": "QuestionByGroupe",
+    "RelativePath": "QuestionByGroupe/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

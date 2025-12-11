@@ -7,5 +7,6 @@ namespace SAN_API.Data
     {
         public DbSet<LoginModel> Login { get; set; }
         public DbSet<UtilisateurModel> Utilisateurs { get; set; }
+        public DbSet<GadmModel> Gadm {  get; set; }
     }
 }

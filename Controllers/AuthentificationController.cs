@@ -172,7 +172,23 @@ namespace SAN_API.Controllers
             Response.Cookies.Delete("jwtToken");
             return Ok(new { message = "Déconnexion réussie" });
         }
-
-        [
+        [Authorize]
+        [HttpPost("insert/gadm")]
+        public async Task<IActionResult> InsertGadm([FromBody] GadmModel model)
+        {
+            if(model is not null)
+            {
+                if(dataContext?.Gadm is not null)
+                {
+                    GadmModel gadm = new();
+                    gadm = model;
+                    await dataContext.Gadm.AddAsync(gadm);
+                    await dataContext.SaveChangesAsync();
+                    return Ok(new { message = "Enregistrement ok" });
+                }
+                return StatusCode(500, "Erreur serveur");
+            }
+            return BadRequest("Requette invalide");
+        }
     }
 }
