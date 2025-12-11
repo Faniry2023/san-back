@@ -1,6 +1,6 @@
 ﻿namespace SAN_API.Models
 {
-    public class GroupeKoboFormulaire
+    public class GroupeKoboModel
     {
         public Guid Id { get; set; }
         public string? Id_formulaire {  get; set; }
