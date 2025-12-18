@@ -125,7 +125,7 @@
         }
       }
     },
-    "/recFormulaire": {
+    "/projets": {
       "get": {
         "tags": [
           "Teste"
@@ -137,19 +137,7 @@
         }
       }
     },
-    "/mesProjets": {
-      "get": {
-        "tags": [
-          "Teste"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/mesQuestion/{id}": {
+    "/Survey/{id}": {
       "get": {
         "tags": [
           "Teste"
@@ -171,7 +159,7 @@
         }
       }
     },
-    "/QuestionByGroupe/{id}": {
+    "/Kobobrute/{id}": {
       "get": {
         "tags": [
           "Teste"
@@ -185,6 +173,40 @@
               "type": "string"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/clean/{id}": {
+      "get": {
+        "tags": [
+          "Teste"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/jsontolist": {
+      "get": {
+        "tags": [
+          "Teste"
         ],
         "responses": {
           "200": {

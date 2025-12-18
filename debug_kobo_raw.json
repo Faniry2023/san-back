@@ -1,0 +1,98 @@
+{
+  "Uid": "agDQ2Bhz5ojHeMx5TmHyQq",
+  "Name": "Recensement",
+  "Content": {
+    "Survey": [
+      {
+        "Type": "start",
+        "Name": "start",
+        "Label": null
+      },
+      {
+        "Type": "end",
+        "Name": "end",
+        "Label": null
+      },
+      {
+        "Type": "begin_group",
+        "Name": "group_qa3zg06",
+        "Label": [
+          "Toerana"
+        ]
+      },
+      {
+        "Type": "text",
+        "Name": null,
+        "Label": [
+          "Fokotany"
+        ]
+      },
+      {
+        "Type": "text",
+        "Name": null,
+        "Label": [
+          "Lot trano"
+        ]
+      },
+      {
+        "Type": "integer",
+        "Name": null,
+        "Label": [
+          "isan'ny ao antrano"
+        ]
+      },
+      {
+        "Type": "end_group",
+        "Name": null,
+        "Label": null
+      },
+      {
+        "Type": "begin_repeat",
+        "Name": "group_mf4zn07",
+        "Label": [
+          "Olona"
+        ]
+      },
+      {
+        "Type": "text",
+        "Name": null,
+        "Label": [
+          "Anarana"
+        ]
+      },
+      {
+        "Type": "text",
+        "Name": null,
+        "Label": [
+          "Fanampiny"
+        ]
+      },
+      {
+        "Type": "integer",
+        "Name": null,
+        "Label": [
+          "Taona"
+        ]
+      },
+      {
+        "Type": "select_one",
+        "Name": null,
+        "Label": [
+          "toe-panambadiana"
+        ]
+      },
+      {
+        "Type": "text",
+        "Name": null,
+        "Label": [
+          "asa"
+        ]
+      },
+      {
+        "Type": "end_repeat",
+        "Name": null,
+        "Label": null
+      }
+    ]
+  }
+}

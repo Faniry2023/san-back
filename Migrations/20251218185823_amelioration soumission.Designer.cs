@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SAN_API.Data;
 
@@ -11,9 +12,11 @@ using SAN_API.Data;
 namespace SAN_API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20251218185823_amelioration soumission")]
+    partial class ameliorationsoumission
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -151,9 +154,6 @@ namespace SAN_API.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Id_question")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Id_soumission")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Reponse")

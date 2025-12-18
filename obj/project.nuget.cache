@@ -88,15 +88,5 @@
     "C:\\Users\\Mahazo Tina Faniry\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Mahazo Tina Faniry\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Une erreur s’est produite lors de l’obtention des données de vulnérabilité du package\u00A0: Impossible de charger l'index de service pour la source https://api.nuget.org/v3/index.json.",
-      "projectPath": "D:\\Cours\\Stage\\ONN\\Projet\\SAN-API\\SAN-API.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\Cours\\Stage\\ONN\\Projet\\SAN-API\\SAN-API.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }

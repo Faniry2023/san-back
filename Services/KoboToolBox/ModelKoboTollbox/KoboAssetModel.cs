@@ -1,6 +1,6 @@
-﻿namespace SAN_API.Services
+﻿namespace SAN_API.Services.KoboToolBox.ModelKoboTollbox
 {
-    public class KoboAsset
+    public class KoboAssetModel
     {
         public string? Uid { get; set; }
         public string? Name { get; set; }
