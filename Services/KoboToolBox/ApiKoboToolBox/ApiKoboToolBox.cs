@@ -9,7 +9,7 @@ namespace SAN_API.Services.KoboToolBox.ApiKoboToolBox
 {
     public class ApiKoboToolBox
     {
-        private const string ApiKey = "79919da5ece5312529f96d0e32894e44d66525dc";
+        private const string ApiKey = "cle_api_kobotoolbox_a_remplacer";
         private const string BaseUrl = "https://kf.kobotoolbox.org/api/v2/assets/";
 
         public static RetoureModel  AuthorizationMethod(string addUrl)
