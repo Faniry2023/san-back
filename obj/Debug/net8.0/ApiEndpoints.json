@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "SAN_API.Controllers.TesteController",
+    "Method": "Clean",
+    "RelativePath": "clean/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SAN_API.Controllers.AuthentificationController",
     "Method": "InsertGadm",
     "RelativePath": "insert/gadm",
@@ -10,6 +26,32 @@
       {
         "Name": "model",
         "Type": "SAN_API.Models.GadmModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.TesteController",
+    "Method": "ListToJson",
+    "RelativePath": "jsontolist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.TesteController",
+    "Method": "KoboApiBrute",
+    "RelativePath": "Kobobrute/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -53,50 +95,8 @@
   },
   {
     "ContainingType": "SAN_API.Controllers.TesteController",
-    "Method": "MesProjets",
-    "RelativePath": "mesProjets",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SAN_API.Controllers.TesteController",
-    "Method": "Question",
-    "RelativePath": "mesQuestion/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SAN_API.Controllers.TesteController",
-    "Method": "QuestionByGroupe",
-    "RelativePath": "QuestionByGroupe/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "SAN_API.Controllers.TesteController",
-    "Method": "Formulaire",
-    "RelativePath": "recFormulaire",
+    "Method": "Projets",
+    "RelativePath": "projets",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -115,6 +115,22 @@
         "Name": "modelForm",
         "Type": "Microsoft.AspNetCore.Http.IFormCollection",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.TesteController",
+    "Method": "Survey",
+    "RelativePath": "Survey/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

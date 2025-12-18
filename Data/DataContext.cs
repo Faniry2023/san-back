@@ -12,5 +12,6 @@ namespace SAN_API.Data
         public DbSet<GroupeKoboModel> GroupeKobo { get;set; }
         public DbSet<QuestionKoboModel> QuestionKobo { get; set ;}
         public DbSet<ReponseKoboModel> ReponseKobo {  get; set; }
+        public DbSet<KoboSoumissionModel> Soumissions {  get; set; }
     }
 }

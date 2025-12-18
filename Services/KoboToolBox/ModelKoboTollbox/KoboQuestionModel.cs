@@ -1,6 +1,6 @@
-﻿namespace SAN_API.Services
+﻿namespace SAN_API.Services.KoboToolBox.ModelKoboTollbox
 {
-    public class KoboQuestion
+    public class KoboQuestionModel
     {
         public string? Type { get; set; }
         public string? Name { get; set; }

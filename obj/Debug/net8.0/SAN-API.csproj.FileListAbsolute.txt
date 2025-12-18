@@ -1,5 +1,7 @@
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\appsettings.Development.json
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\appsettings.json
+D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\debug_kobo_raw.json
+D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\SAN-API.staticwebassets.runtime.json
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\SAN-API.staticwebassets.endpoints.json
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\SAN-API.exe
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\SAN-API.deps.json
@@ -47,6 +49,7 @@ D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -172,5 +175,3 @@ D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\refint\SAN-API.dll
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\SAN-API.pdb
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\SAN-API.genruntimeconfig.cache
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\ref\SAN-API.dll
-D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\SAN-API.staticwebassets.runtime.json
-D:\Cours\Stage\ONN\Projet\SAN-API\bin\Debug\net8.0\Newtonsoft.Json.dll
