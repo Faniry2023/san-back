@@ -125,6 +125,81 @@
         }
       }
     },
+    "/kobo/projetcts": {
+      "get": {
+        "tags": [
+          "KoboToolbox"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/kobo/new/synchronisation": {
+      "get": {
+        "tags": [
+          "KoboToolbox"
+        ],
+        "parameters": [
+          {
+            "name": "IsLess",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "IsMore",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "koboAssets",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/KoboAssetModel"
+              }
+            }
+          },
+          {
+            "name": "koboForm",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/FormulaireKoboModel"
+              }
+            }
+          },
+          {
+            "name": "CountNew",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Alert",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/projets": {
       "get": {
         "tags": [
@@ -257,6 +332,24 @@
   },
   "components": {
     "schemas": {
+      "FormulaireKoboModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "uid": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom_formulaire": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "GadmModel": {
         "type": "object",
         "properties": {
@@ -277,6 +370,24 @@
             "nullable": true
           },
           "gid": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "KoboAssetModel": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetType": {
             "type": "string",
             "nullable": true
           }
