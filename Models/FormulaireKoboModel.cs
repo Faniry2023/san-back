@@ -5,6 +5,5 @@
         public Guid Id { get; set; }
         public string? Uid {  get; set; }
         public string? Nom_formulaire {  get; set; }
-        public DateTime Date_soumission {  get; set; }
     }
 }
