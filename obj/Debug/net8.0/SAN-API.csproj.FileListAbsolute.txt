@@ -168,6 +168,7 @@ D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\staticwebassets.build.json
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\staticwebassets.development.json
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\SAN-API.csproj.Up2Date
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\SAN-API.dll
 D:\Cours\Stage\ONN\Projet\SAN-API\obj\Debug\net8.0\refint\SAN-API.dll

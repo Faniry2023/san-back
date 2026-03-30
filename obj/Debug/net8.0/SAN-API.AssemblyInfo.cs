@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SAN-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a30756a9b2c1e2502dd4748984e79d07aa3043c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1011263f34fde6201fa0592fdba0019cdd6e339c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SAN-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SAN-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
