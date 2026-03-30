@@ -4,7 +4,7 @@
     {
         public Guid Id { get; set; }
         public string? Nom_evenement {  get; set; }
-        public string? Annee {  get; set; }
+        public int? Annee {  get; set; }
         public string? Jan {  get; set; }
         public string? Fev {  get; set; }
         public string? Mar {  get; set; }

@@ -10,6 +10,8 @@ namespace SAN_API.Helper
         public List<KoboAssetModel>? koboAssets { get; set; } = new();
         public List<FormulaireKoboModel>? koboForm { get; set; } = new();
         public int CountNew {  get; set; }
+        public int CountDel {  get; set; }
         public bool Alert {  get; set; }
+        public List<string>? NotDel { get; set; }
     }
 }

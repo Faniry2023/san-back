@@ -82,6 +82,49 @@
         }
       }
     },
+    "/getalluser": {
+      "get": {
+        "tags": [
+          "Authentification"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/addauthorise": {
+      "post": {
+        "tags": [
+          "Authentification"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthoriseHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthoriseHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthoriseHelper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/logout": {
       "post": {
         "tags": [
@@ -94,26 +137,170 @@
         }
       }
     },
-    "/insert/gadm": {
+    "/enquete/all": {
+      "get": {
+        "tags": [
+          "Enquete"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/enquete/add": {
       "post": {
         "tags": [
-          "Authentification"
+          "Enquete"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GadmModel"
+                "$ref": "#/components/schemas/EnqueteHelper"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GadmModel"
+                "$ref": "#/components/schemas/EnqueteHelper"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GadmModel"
+                "$ref": "#/components/schemas/EnqueteHelper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/es/getall": {
+      "get": {
+        "tags": [
+          "Es"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/es/getbyid/{id}": {
+      "get": {
+        "tags": [
+          "Es"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/es/create": {
+      "post": {
+        "tags": [
+          "Es"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EsHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EsHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EsHelper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/gadm/getGadm": {
+      "get": {
+        "tags": [
+          "Gadm"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/test/apikey": {
+      "get": {
+        "tags": [
+          "KoboToolbox"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/kobo/delete/api": {
+      "delete": {
+        "tags": [
+          "KoboToolbox"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/kobo/add/api": {
+      "post": {
+        "tags": [
+          "KoboToolbox"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiKeyKoboHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiKeyKoboHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApiKeyKoboHelper"
               }
             }
           }
@@ -138,58 +325,250 @@
       }
     },
     "/kobo/new/synchronisation": {
+      "post": {
+        "tags": [
+          "KoboToolbox"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetoureKoboFormulaireHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetoureKoboFormulaireHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetoureKoboFormulaireHelper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/alldata/for/one/form/{uid}": {
       "get": {
         "tags": [
           "KoboToolbox"
         ],
         "parameters": [
           {
-            "name": "IsLess",
-            "in": "query",
+            "name": "uid",
+            "in": "path",
+            "required": true,
             "schema": {
-              "type": "boolean"
+              "type": "string"
             }
-          },
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/kobo/synch/one/{uid}": {
+      "get": {
+        "tags": [
+          "KoboToolbox"
+        ],
+        "parameters": [
           {
-            "name": "IsMore",
-            "in": "query",
+            "name": "uid",
+            "in": "path",
+            "required": true,
             "schema": {
-              "type": "boolean"
+              "type": "string"
             }
-          },
-          {
-            "name": "koboAssets",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/KoboAssetModel"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/situation/add": {
+      "post": {
+        "tags": [
+          "Situation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListeSituationHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListeSituationHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListeSituationHelper"
               }
             }
-          },
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/situation/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Situation"
+        ],
+        "parameters": [
           {
-            "name": "koboForm",
-            "in": "query",
+            "name": "id",
+            "in": "path",
+            "required": true,
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/FormulaireKoboModel"
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/situation/getall": {
+      "get": {
+        "tags": [
+          "Situation"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/situation/update": {
+      "put": {
+        "tags": [
+          "Situation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSituationHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSituationHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSituationHelper"
               }
             }
-          },
-          {
-            "name": "CountNew",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/situation/add/disp": {
+      "post": {
+        "tags": [
+          "Situation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisponibiliteHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisponibiliteHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisponibiliteHelper"
+              }
             }
-          },
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/situation/update/dispo": {
+      "put": {
+        "tags": [
+          "Situation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisponibiliteHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisponibiliteHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisponibiliteHelper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/situation/delete/dispo/{id}": {
+      "delete": {
+        "tags": [
+          "Situation"
+        ],
+        "parameters": [
           {
-            "name": "Alert",
-            "in": "query",
+            "name": "id",
+            "in": "path",
+            "required": true,
             "schema": {
-              "type": "boolean"
+              "type": "string"
             }
           }
         ],
@@ -290,6 +669,102 @@
         }
       }
     },
+    "/vulnerabilite/all": {
+      "get": {
+        "tags": [
+          "Vulnerabilite"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/vulnerabilite/add": {
+      "post": {
+        "tags": [
+          "Vulnerabilite"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostVulnerabiliteHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostVulnerabiliteHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostVulnerabiliteHelper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/vulnerabilite/update": {
+      "put": {
+        "tags": [
+          "Vulnerabilite"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVulnerabiliteHelper"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVulnerabiliteHelper"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVulnerabiliteHelper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/vulnerabilite/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Vulnerabilite"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -332,6 +807,159 @@
   },
   "components": {
     "schemas": {
+      "ApiKeyKoboHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_utilisateur": {
+            "type": "string",
+            "nullable": true
+          },
+          "key": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuthoriseHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_utilisateur": {
+            "type": "string",
+            "nullable": true
+          },
+          "graphique": {
+            "type": "boolean"
+          },
+          "situation": {
+            "type": "boolean"
+          },
+          "vulnerabilite": {
+            "type": "boolean"
+          },
+          "carte": {
+            "type": "boolean"
+          },
+          "utilisateur": {
+            "type": "boolean"
+          },
+          "acces": {
+            "type": "boolean"
+          },
+          "kobo": {
+            "type": "boolean"
+          },
+          "powerBi": {
+            "type": "boolean"
+          },
+          "gadm": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DisponibiliteHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_prod": {
+            "type": "string",
+            "nullable": true
+          },
+          "temps": {
+            "$ref": "#/components/schemas/TempsHelper"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EnqueteHelper": {
+        "type": "object",
+        "properties": {
+          "nom": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EnqueteVulHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EsHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          },
+          "prenom": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_gadm": {
+            "type": "string",
+            "nullable": true
+          },
+          "nb_site": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "telephone": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EveVulHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_enquete": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_val_mens": {
+            "type": "string",
+            "nullable": true
+          },
+          "cle_principal": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "FormulaireKoboModel": {
         "type": "object",
         "properties": {
@@ -346,6 +974,9 @@
           "nom_formulaire": {
             "type": "string",
             "nullable": true
+          },
+          "not_del": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -394,6 +1025,192 @@
         },
         "additionalProperties": false
       },
+      "ListeSituationHelper": {
+        "type": "object",
+        "properties": {
+          "situations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SituationHelper"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PostVulnerabiliteHelper": {
+        "type": "object",
+        "properties": {
+          "enquete": {
+            "$ref": "#/components/schemas/EnqueteVulHelper"
+          },
+          "evenement": {
+            "$ref": "#/components/schemas/EveVulHelper"
+          },
+          "val_mensuel": {
+            "$ref": "#/components/schemas/ValVulHelper"
+          },
+          "relation": {
+            "$ref": "#/components/schemas/RelVulHelper"
+          },
+          "es": {
+            "$ref": "#/components/schemas/EsHelper"
+          },
+          "gadm": {
+            "$ref": "#/components/schemas/GadmModel"
+          },
+          "temps": {
+            "$ref": "#/components/schemas/TempsHelper"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProduitHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_temps": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_gadm": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_enquete": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_es": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom_prod": {
+            "type": "string",
+            "nullable": true
+          },
+          "unite": {
+            "type": "string",
+            "nullable": true
+          },
+          "cle": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProduitModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "id_temps": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_gadm": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_enquete": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_es": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom_prod": {
+            "type": "string",
+            "nullable": true
+          },
+          "unite": {
+            "type": "string",
+            "nullable": true
+          },
+          "cle": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RelVulHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_evenement": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_val_mensuel": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_temps": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RetoureKoboFormulaireHelper": {
+        "type": "object",
+        "properties": {
+          "isLess": {
+            "type": "boolean"
+          },
+          "isMore": {
+            "type": "boolean"
+          },
+          "koboAssets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KoboAssetModel"
+            },
+            "nullable": true
+          },
+          "koboForm": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FormulaireKoboModel"
+            },
+            "nullable": true
+          },
+          "countNew": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "countDel": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "alert": {
+            "type": "boolean"
+          },
+          "notDel": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "SeConLoginHelper": {
         "type": "object",
         "properties": {
@@ -411,6 +1228,21 @@
         },
         "additionalProperties": false
       },
+      "SituationHelper": {
+        "type": "object",
+        "properties": {
+          "produit": {
+            "$ref": "#/components/schemas/ProduitHelper"
+          },
+          "temps": {
+            "$ref": "#/components/schemas/TempsHelper"
+          },
+          "es": {
+            "$ref": "#/components/schemas/EsHelper"
+          }
+        },
+        "additionalProperties": false
+      },
       "StringStringValuesKeyValuePair": {
         "type": "object",
         "properties": {
@@ -423,6 +1255,192 @@
             "items": {
               "type": "string"
             }
+          }
+        },
+        "additionalProperties": false
+      },
+      "TempsHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom_evenement": {
+            "type": "string",
+            "nullable": true
+          },
+          "annee": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jan": {
+            "type": "string",
+            "nullable": true
+          },
+          "fev": {
+            "type": "string",
+            "nullable": true
+          },
+          "mar": {
+            "type": "string",
+            "nullable": true
+          },
+          "avr": {
+            "type": "string",
+            "nullable": true
+          },
+          "mai": {
+            "type": "string",
+            "nullable": true
+          },
+          "jui": {
+            "type": "string",
+            "nullable": true
+          },
+          "juill": {
+            "type": "string",
+            "nullable": true
+          },
+          "aou": {
+            "type": "string",
+            "nullable": true
+          },
+          "sep": {
+            "type": "string",
+            "nullable": true
+          },
+          "oct": {
+            "type": "string",
+            "nullable": true
+          },
+          "nov": {
+            "type": "string",
+            "nullable": true
+          },
+          "dec": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TempsModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nom_evenement": {
+            "type": "string",
+            "nullable": true
+          },
+          "annee": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "jan": {
+            "type": "string",
+            "nullable": true
+          },
+          "fev": {
+            "type": "string",
+            "nullable": true
+          },
+          "mar": {
+            "type": "string",
+            "nullable": true
+          },
+          "avr": {
+            "type": "string",
+            "nullable": true
+          },
+          "mai": {
+            "type": "string",
+            "nullable": true
+          },
+          "jui": {
+            "type": "string",
+            "nullable": true
+          },
+          "juill": {
+            "type": "string",
+            "nullable": true
+          },
+          "aou": {
+            "type": "string",
+            "nullable": true
+          },
+          "sep": {
+            "type": "string",
+            "nullable": true
+          },
+          "oct": {
+            "type": "string",
+            "nullable": true
+          },
+          "nov": {
+            "type": "string",
+            "nullable": true
+          },
+          "dec": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateSituationHelper": {
+        "type": "object",
+        "properties": {
+          "produit": {
+            "$ref": "#/components/schemas/ProduitModel"
+          },
+          "temps": {
+            "$ref": "#/components/schemas/TempsModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateVulnerabiliteHelper": {
+        "type": "object",
+        "properties": {
+          "val_mensuel": {
+            "$ref": "#/components/schemas/ValVulHelper"
+          },
+          "evenement": {
+            "$ref": "#/components/schemas/EveVulHelper"
+          },
+          "temps": {
+            "$ref": "#/components/schemas/TempsHelper"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValVulHelper": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_temps": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_gadm": {
+            "type": "string",
+            "nullable": true
+          },
+          "nom_val": {
+            "type": "string",
+            "nullable": true
+          },
+          "id_es": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

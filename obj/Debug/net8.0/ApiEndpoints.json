@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "SAN_API.Controllers.AuthentificationController",
+    "Method": "AddAuthorise",
+    "RelativePath": "addauthorise",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SAN_API.Helper.AuthoriseHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.KoboToolboxController",
+    "Method": "AllDataForOneForm",
+    "RelativePath": "alldata/for/one/form/{uid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "uid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SAN_API.Controllers.TesteController",
     "Method": "Clean",
     "RelativePath": "clean/{id}",
@@ -16,19 +48,91 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SAN_API.Controllers.AuthentificationController",
-    "Method": "InsertGadm",
-    "RelativePath": "insert/gadm",
+    "ContainingType": "SAN_API.Controllers.EnqueteController",
+    "Method": "Add",
+    "RelativePath": "enquete/add",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "model",
-        "Type": "SAN_API.Models.GadmModel",
+        "Type": "SAN_API.Helper.EnqueteHelper",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.EnqueteController",
+    "Method": "GetAll",
+    "RelativePath": "enquete/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.EsController",
+    "Method": "Create",
+    "RelativePath": "es/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SAN_API.Helper.EsHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.EsController",
+    "Method": "GetAll",
+    "RelativePath": "es/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.EsController",
+    "Method": "GetById",
+    "RelativePath": "es/getbyid/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.GadmController",
+    "Method": "GetGadm",
+    "RelativePath": "gadm/getGadm",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.AuthentificationController",
+    "Method": "GetAllUser",
+    "RelativePath": "getalluser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -43,41 +147,42 @@
   },
   {
     "ContainingType": "SAN_API.Controllers.KoboToolboxController",
-    "Method": "NewSynchronisation",
-    "RelativePath": "kobo/new/synchronisation",
-    "HttpMethod": "GET",
+    "Method": "AddApi",
+    "RelativePath": "kobo/add/api",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "IsLess",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
+        "Name": "model",
+        "Type": "SAN_API.Helper.ApiKeyKoboHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.KoboToolboxController",
+    "Method": "DeleteApi",
+    "RelativePath": "kobo/delete/api",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.KoboToolboxController",
+    "Method": "NewSynchronisation",
+    "RelativePath": "kobo/new/synchronisation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Name": "IsMore",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      },
-      {
-        "Name": "koboAssets",
-        "Type": "System.Collections.Generic.List\u00601[[SAN_API.Services.KoboToolBox.ModelKoboTollbox.KoboAssetModel, SAN-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "koboForm",
-        "Type": "System.Collections.Generic.List\u00601[[SAN_API.Models.FormulaireKoboModel, SAN-API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "CountNew",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Alert",
-        "Type": "System.Boolean",
-        "IsRequired": false
+        "Name": "model",
+        "Type": "SAN_API.Helper.RetoureKoboFormulaireHelper",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -90,6 +195,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.KoboToolboxController",
+    "Method": "SynchOneForm",
+    "RelativePath": "kobo/synch/one/{uid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "uid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -171,6 +292,112 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SAN_API.Controllers.SituationController",
+    "Method": "Add",
+    "RelativePath": "situation/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SAN_API.Helper.ListeSituationHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.SituationController",
+    "Method": "AddDispo",
+    "RelativePath": "situation/add/disp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SAN_API.Helper.DisponibiliteHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.SituationController",
+    "Method": "Delete",
+    "RelativePath": "situation/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.SituationController",
+    "Method": "DeleteDispo",
+    "RelativePath": "situation/delete/dispo/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.SituationController",
+    "Method": "GetAll",
+    "RelativePath": "situation/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.SituationController",
+    "Method": "Update",
+    "RelativePath": "situation/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SAN_API.Helper.UpdateSituationHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.SituationController",
+    "Method": "UpdateDispo",
+    "RelativePath": "situation/update/dispo",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SAN_API.Helper.DisponibiliteHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SAN_API.Controllers.TesteController",
     "Method": "Survey",
     "RelativePath": "Survey/{id}",
@@ -181,6 +408,74 @@
       {
         "Name": "id",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.KoboToolboxController",
+    "Method": "TestApi",
+    "RelativePath": "test/apikey",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.VulnerabiliteController",
+    "Method": "Add",
+    "RelativePath": "vulnerabilite/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SAN_API.Helper.Vulnerabilite.PostVulnerabiliteHelper",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.VulnerabiliteController",
+    "Method": "GetAll",
+    "RelativePath": "vulnerabilite/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.VulnerabiliteController",
+    "Method": "Delete",
+    "RelativePath": "vulnerabilite/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SAN_API.Controllers.VulnerabiliteController",
+    "Method": "Update",
+    "RelativePath": "vulnerabilite/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SAN_API.Helper.Vulnerabilite.UpdateVulnerabiliteHelper",
         "IsRequired": true
       }
     ],

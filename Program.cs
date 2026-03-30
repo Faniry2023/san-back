@@ -15,7 +15,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("https://localhost:4200")
+        policy.WithOrigins("https://san-cxxs.onrender.com", "https://san-cxxs.onrender.com")
         .AllowCredentials()
         .AllowAnyMethod()
         .AllowAnyHeader();
@@ -28,7 +28,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DbServer"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DbOnline"));
 });
 
 builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
@@ -83,4 +83,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://0.0.0.0:{port}");
 app.Run();
