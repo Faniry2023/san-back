@@ -5,5 +5,6 @@
         public Guid Id { get; set; }
         public string? Uid {  get; set; }
         public string? Nom_formulaire {  get; set; }
+        public bool Not_del {  get; set; }
     }
 }

@@ -9,8 +9,13 @@ namespace SAN_API.Services.KoboToolBox.ApiKoboToolBox
 {
     public class ApiKoboToolBox
     {
-        private const string ApiKey = "clé";
+        //private const string ApiKey = "79919da5ece5312529f96d0e32894e44d66525dc";
         private const string BaseUrl = "https://kf.kobotoolbox.org/api/v2/assets/";
+        public static string ApiKey = null;
+        public static void EnterApi(string apiKey)
+        {
+            ApiKoboToolBox.ApiKey = apiKey;
+        }
 
         public static RetoureModel  AuthorizationMethod(string addUrl)
         {

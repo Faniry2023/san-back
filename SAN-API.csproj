@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Media\Images\" />
+    <Folder Include="wwwroot\Media\Tem\" />
   </ItemGroup>
 
 </Project>

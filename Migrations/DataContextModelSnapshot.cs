@@ -22,17 +22,152 @@ namespace SAN_API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("SAN_API.Models.ApiKeyKoboModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Id_utilisateur")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ApiKeyKobo");
+                });
+
+            modelBuilder.Entity("SAN_API.Models.AuthoriseModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Acces")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Carte")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Gadm")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Graphique")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Id_utilisateur")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Kobo")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("PowerBi")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Situation")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Utilisateur")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Vulnerabilite")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Authorise");
+                });
+
+            modelBuilder.Entity("SAN_API.Models.DisponibiliteModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Id_prod")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_temps")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Disponibilites");
+                });
+
+            modelBuilder.Entity("SAN_API.Models.ESModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Id_gadm")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Nb_site")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Prenom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telephone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Es");
+                });
+
+            modelBuilder.Entity("SAN_API.Models.EnqueteModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Enquetes");
+                });
+
+            modelBuilder.Entity("SAN_API.Models.EvenementModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Cle_principal")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_enquete")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_val_mens")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Evenements");
+                });
+
             modelBuilder.Entity("SAN_API.Models.FormulaireKoboModel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Date_soumission")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Nom_formulaire")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Not_del")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Uid")
                         .HasColumnType("nvarchar(max)");
@@ -127,6 +262,38 @@ namespace SAN_API.Migrations
                     b.ToTable("Login");
                 });
 
+            modelBuilder.Entity("SAN_API.Models.ProduitModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Cle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_enquete")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_es")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_gadm")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_temps")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nom_prod")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Unite")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Prosuits");
+                });
+
             modelBuilder.Entity("SAN_API.Models.QuestionKoboModel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -142,6 +309,29 @@ namespace SAN_API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("QuestionKobo");
+                });
+
+            modelBuilder.Entity("SAN_API.Models.RelationModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Id_evenement")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_temps")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_val_mensuel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nom")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Relations");
                 });
 
             modelBuilder.Entity("SAN_API.Models.ReponseKoboModel", b =>
@@ -164,6 +354,59 @@ namespace SAN_API.Migrations
                     b.ToTable("ReponseKobo");
                 });
 
+            modelBuilder.Entity("SAN_API.Models.TempsModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int?>("Annee")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Aou")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Avr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Dec")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Fev")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Jan")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Jui")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Juill")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nom_evenement")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nov")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Oct")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sep")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Temps");
+                });
+
             modelBuilder.Entity("SAN_API.Models.UtilisateurModel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -176,8 +419,14 @@ namespace SAN_API.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Gadm")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Id_login")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Matricule")
                         .HasColumnType("nvarchar(max)");
@@ -194,6 +443,29 @@ namespace SAN_API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Utilisateurs");
+                });
+
+            modelBuilder.Entity("SAN_API.Models.Val_mensuelModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Id_es")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_gadm")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id_temps")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nom_val")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Val_mensuels");
                 });
 #pragma warning restore 612, 618
         }
